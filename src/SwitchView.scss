@@ -1,0 +1,49 @@
+.switch-view-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switch-view-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 28px;
+  height: 14px;
+  border-radius: 60px;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.switch-view-label-on {
+  @extend .switch-view-label;
+  background: #7dbbe89e;
+}
+
+.switch-view-label-off {
+  @extend .switch-view-label;
+  background: #e0eaf5;
+}
+
+.switch-view-label .switch-view-button {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 20px;
+  transition: 0.2s;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+
+.switch-view-checkbox:checked + .switch-view-label .switch-view-button {
+  left: calc(100% - 1px);
+  transform: translateX(-100%);
+}
+
+.switch-view-label:active .switch-view-button {
+  width: 12px;
+}
